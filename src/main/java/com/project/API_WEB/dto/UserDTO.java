@@ -12,7 +12,7 @@ import java.util.List;
 public class UserDTO implements Serializable {
     @Id
     private String id;
-    private String nome,email,senha,senhaConfirmada;
+    private String nome,email,senha;
     @DBRef(lazy = true)
     private List<Product> products;
     public UserDTO(User user) {
@@ -21,7 +21,6 @@ public class UserDTO implements Serializable {
         this.email = user.getEmail();
         this.products = user.getProducts();
         this.senha = user.getSenha();
-        this.senhaConfirmada = user.getSenhaConfirmada();
     }
     public UserDTO(){}
 
@@ -39,10 +38,6 @@ public class UserDTO implements Serializable {
 
     public String getSenha() {
         return senha;
-    }
-
-    public String getSenhaConfirmada() {
-        return senhaConfirmada;
     }
 
     public List<Product> getProducts() {

@@ -41,7 +41,7 @@ public class UserServices {
     }
 
     public User fromDTO(UserDTO objDTO){
-        return new User(objDTO.getId(),objDTO.getNome(), objDTO.getEmail(), objDTO.getSenha(), objDTO.getSenhaConfirmada());
+        return new User(objDTO.getId(),objDTO.getNome(), objDTO.getEmail(), objDTO.getSenha());
     }
 
 }

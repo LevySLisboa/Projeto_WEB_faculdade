@@ -18,12 +18,11 @@ public class User{
 
     public User() {}
 
-    public User(String id, String nome, String email, String senha, String senhaConfirmada) {
+    public User(String id, String nome, String email, String senha) {
         this.id = id;
         this.nome = nome;
         this.email = email;
         this.senha = senha;
-        this.senhaConfirmada = senhaConfirmada;
     }
 
     public String getId() {
