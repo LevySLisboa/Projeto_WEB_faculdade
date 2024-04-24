@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Novo Produto</title>
+</head>
+<body>
+<h2>Registrar Novo Produto</h2>
+<form id="productForm">
+    <label for="name">Nome:</label><br>
+    <input type="text" id="name" name="name" required><br>
+    <label for="description">Descrição:</label><br>
+    <textarea id="description" name="description" required></textarea><br>
+    <label for="price">Preço:</label><br>
+    <input type="text" id="price" name="price" required><br><br>
+    <!-- Se o vendedor é opcional, você pode removê-lo ou adicioná-lo como um campo -->
+    <!-- <label for="seller">Vendedor:</label><br> -->
+    <!-- <input type="text" id="seller" name="seller"><br><br> -->
+    <button type="submit">Registrar Produto</button>
+</form>
+<script src="scripts/product_register.js">
+</script>
+</body>
+</html>
