@@ -12,16 +12,18 @@ import java.util.Objects;
 public class User{
     @Id
     private String id;
-    private String nome,email;
+    private String nome,email,senha,senhaConfirmada;
     @DBRef(lazy = true)
     private List<Product> products = new ArrayList<>();
 
     public User() {}
 
-    public User(String id, String name, String email) {
+    public User(String id, String nome, String email, String senha, String senhaConfirmada) {
         this.id = id;
-        this.nome = name;
+        this.nome = nome;
         this.email = email;
+        this.senha = senha;
+        this.senhaConfirmada = senhaConfirmada;
     }
 
     public String getId() {
@@ -50,6 +52,22 @@ public class User{
 
     public List<Product> getProducts() {
         return products;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public String getSenhaConfirmada() {
+        return senhaConfirmada;
+    }
+
+    public void setSenhaConfirmada(String senhaConfirmada) {
+        this.senhaConfirmada = senhaConfirmada;
     }
 
     public void setProducts(List<Product> products) {
