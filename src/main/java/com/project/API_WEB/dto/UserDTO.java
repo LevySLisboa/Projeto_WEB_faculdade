@@ -12,11 +12,13 @@ import java.util.List;
 public class UserDTO implements Serializable {
     @Id
     private String id;
+    private int matricula;
     private String nome,email,senha;
     @DBRef(lazy = true)
     private List<Product> products;
     public UserDTO(User user) {
         this.id = user.getId();
+        this.matricula = user.getMatricula();
         this.nome = user.getNome();
         this.email = user.getEmail();
         this.products = user.getProducts();
@@ -26,6 +28,10 @@ public class UserDTO implements Serializable {
 
     public String getId() {
         return id;
+    }
+
+    public int getMatricula() {
+        return matricula;
     }
 
     public String getNome() {

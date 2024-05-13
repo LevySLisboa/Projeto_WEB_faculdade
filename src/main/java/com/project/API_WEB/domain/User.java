@@ -12,14 +12,16 @@ import java.util.Objects;
 public class User{
     @Id
     private String id;
+    private int matricula;
     private String nome,email,senha,senhaConfirmada;
     @DBRef(lazy = true)
     private List<Product> products = new ArrayList<>();
 
     public User() {}
 
-    public User(String id, String nome, String email, String senha) {
+    public User(String id, int matricula,String nome, String email, String senha) {
         this.id = id;
+        this.matricula =  matricula;
         this.nome = nome;
         this.email = email;
         this.senha = senha;
@@ -31,6 +33,14 @@ public class User{
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public int getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(int matricula) {
+        this.matricula = matricula;
     }
 
     public String getNome() {

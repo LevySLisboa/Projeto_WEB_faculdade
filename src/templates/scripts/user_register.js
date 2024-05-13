@@ -1,8 +1,8 @@
-document.getElementById('userForm').addEventListener('submit', function(event) {
+document.getElementById('register-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Evita o comportamento padrão de enviar o formulário
 
     // Verifica se as senhas são iguais
-    var password = document.getElementById("password").value;
+    var password = document.getElementById("register_password").value;
     var password_confirmation = document.getElementById("password_confirmation").value;
     if (password !== password_confirmation) {
         alert("As senhas não correspondem.");
@@ -12,6 +12,7 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
     // Coleta os dados do formulário
     const formData = new FormData(this);
     const userData = {
+        matricula:formData.get('matricula'),
         nome: formData.get('name'),
         email: formData.get('email'),
         senha: password // Usando a senha digitada
