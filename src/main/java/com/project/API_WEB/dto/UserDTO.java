@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDTO implements Serializable {
-    @Id
     private String id;
     private int matricula;
     private String nome,email,senha;

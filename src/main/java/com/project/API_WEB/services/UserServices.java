@@ -4,7 +4,9 @@ import com.project.API_WEB.dto.UserDTO;
 import com.project.API_WEB.domain.User;
 import com.project.API_WEB.repository.UsersRepository;
 import com.project.API_WEB.services.exception.ObjectNotFoundException;
+import org.hibernate.sql.model.internal.OptionalTableUpdate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,6 +16,8 @@ import java.util.Optional;
 public class UserServices {
    @Autowired
     private UsersRepository repository;
+   @Autowired
+   private PasswordEncoder encoder;
     public List<User> findAll() {
         return repository.findAll();
     }
@@ -22,7 +26,10 @@ public class UserServices {
         Optional<User> user = repository.findById(id);
         return user.orElseThrow(()->new ObjectNotFoundException("Objeto não encontrado"));
     }
+
     public User insert(User obj){
+        String senhaEncode =encoder.encode(obj.getSenha());
+        obj.setSenha(senhaEncode);
         return repository.insert(obj);
     }
     public void delete(String id){
