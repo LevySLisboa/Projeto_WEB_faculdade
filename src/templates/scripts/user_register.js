@@ -4,6 +4,10 @@ document.getElementById('register-form').addEventListener('submit', function(eve
     // Verifica se as senhas são iguais
     var password = document.getElementById("register_password").value;
     var password_confirmation = document.getElementById("password_confirmation").value;
+    if(password<8 || password_confirmation<8){
+        alert("Tente uma senha maior");
+        return;
+    }
     if (password !== password_confirmation) {
         alert("As senhas não correspondem.");
         return;
@@ -35,9 +39,8 @@ document.getElementById('register-form').addEventListener('submit', function(eve
     }).then(data => {
         alert('Usuário registrado com sucesso!');
         console.log(data);
-        // Limpa o formulário após o registro bem-sucedido, se desejado
-        this.reset();
     }).catch(error => {
         console.error('Erro:', error);
+        this.reset();
     });
 });

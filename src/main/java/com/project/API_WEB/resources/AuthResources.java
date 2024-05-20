@@ -19,16 +19,16 @@ public class AuthResources {
     @PostMapping("/login")
     public ResponseEntity<String> login(@Valid @RequestBody UserDTO objDTO){
         if (objDTO.getEmail() == null || objDTO.getSenha() == null) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Email and password are required");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Email e senha são obrigatórios");
         }
 
         try {
             if (authService.authenticateUser(objDTO)) {
-                return ResponseEntity.ok("Login successful");
+                return ResponseEntity.ok("Sucesso no Login");
             }
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid username or password");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Email e/ou senha inválido(s)");
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred during login");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Um erro ocorreu durante o login");
         }
     }
 }

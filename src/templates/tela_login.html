@@ -41,16 +41,17 @@
         <!------------------- LOGIN -------------------------->
 
         <div class="login-container" id="login">
+            <form id="login-form">
             <div class="top">
                 <span>Não Possui Conta ? <a href="#" onclick="register()">Registre-se</a></span>
                 <header>ENTRAR</header>
             </div>
             <div class="input-box">
-                <input type="text" class="input-field" placeholder="Email">
+                <input type="text" class="input-field" id="login_email" name="login_email" placeholder="Email">
                 <i class="bx bx-user"></i>
             </div>
             <div class="input-box">
-                <input type="password" class="input-field" placeholder="Senha">
+                <input type="password" class="input-field" id="login_password" name="login_password" placeholder="Senha">
                 <i class="bx bx-lock-alt"></i>
             </div>
             <div class="input-box">
@@ -65,42 +66,43 @@
                     <label><a href="#">Esqueceu Sua Senha ?</a></label>
                 </div>
             </div>
+            </form>
         </div>
 
         <!------------------- REGISTRO -------------------------->
 
         <div class="register-container" id="register">
             <form id="register-form">
-            <div class="top">
-                <span>Possui conta ? <a href="#" onclick="login()">Entrar</a></span>
-                <header>REGISTRE-SE</header>
-            </div>
-            <div class="two-forms">
-                <div class="input-box">
-                    <input type="text" class="input-field" id="matricula" name="matricula" placeholder="Matricula">
-                    <i class='bx bxs-graduation'></i>
+                <div class="top">
+                    <span>Possui conta ? <a href="#" onclick="login()">Entrar</a></span>
+                    <header>REGISTRE-SE</header>
+                </div>
+                <div class="two-forms">
+                    <div class="input-box">
+                        <input type="text" class="input-field" id="matricula" name="matricula" placeholder="Matricula">
+                        <i class='bx bxs-graduation'></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="input-field" id = "name" name ="name" placeholder="Nome">
+                        <i class="bx bx-user"></i>
+                    </div>
                 </div>
                 <div class="input-box">
-                    <input type="text" class="input-field" id = "name" name ="name" placeholder="Nome">
-                    <i class="bx bx-user"></i>
+                    <input type="text" class="input-field"  id="email" name="email" placeholder="Email">
+                    <i class="bx bx-envelope"></i>
                 </div>
-            </div>
-            <div class="input-box">
-                <input type="text" class="input-field"  id="email" name="email" placeholder="Email">
-                <i class="bx bx-envelope"></i>
-            </div>
-            <div class="input-box">
-                <input type="password" class="input-field" id="register_password" name="register_password" placeholder="Senha">
-                <i class="bx bx-lock-alt"></i>
-            </div>
-            <div class="input-box">
-                <input type="password" class="input-field" id="password_confirmation" name="password_confirmation" placeholder="Confirme sua senha">
-                <i class="bx bx-lock-alt"></i>
-            </div>
+                <div class="input-box">
+                    <input type="password" class="input-field" id="register_password" name="register_password" placeholder="Senha">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="input-field" id="password_confirmation" name="password_confirmation" placeholder="Confirme sua senha">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
 
-            <div class="submit">
-                <button type="submit">Registre-se</button>
-            </div>
+                <div class="submit">
+                    <button type="submit">Registre-se</button>
+                </div>
             </form>
             <div class="two-col">
                 <div class="one">
@@ -156,6 +158,7 @@
     }
 
 </script>
+<script src="scripts/login.js"></script>
 <script src="scripts/user_register.js"></script>
 </body>
 </html>
